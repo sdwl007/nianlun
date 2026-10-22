@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#34A08C" />
+    <meta name="description" content="年轮 · 一年一环，层层积累 —— 记录家人与自己的人生历程" />
+    <link rel="icon" type="image/png" href="./logo.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <!-- iOS 添加到主屏幕后全屏独立运行（替代 manifest 的 display: standalone） -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- black-translucent：状态栏透明、网页内容延伸到顶，由页面自绘顶栏底色（无系统毛玻璃带） -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="年轮" />
+    <title>年轮 · 家庭人生历程记录</title>
+    <script type="module" crossorigin src="./assets/index-Ci-EjY3X.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dp3KO5Cs.css">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // 排障 overlay：启动期的 JS 错误直接显示在屏幕上（白屏时截图即可看到原因）
+      (function () {
+        var box = null
+        function showErr(msg) {
+          if (!box) {
+            box = document.createElement('pre')
+            box.style.cssText = 'position:fixed;left:0;top:0;right:0;z-index:99999;background:#fff5f5;color:#c00;padding:10px 12px;font-size:12px;line-height:1.5;white-space:pre-wrap;word-break:break-all;max-height:65%;overflow:auto;border-bottom:2px solid #c00;margin:0;'
+            document.body.appendChild(box)
+          }
+          box.textContent += msg + '\n'
+        }
+        window.addEventListener('error', function (e) {
+          document.title = 'JS_ERR:' + e.message
+          showErr('[错误] ' + e.message + ' @ ' + String(e.filename || '').split('/').pop() + ':' + (e.lineno || 0))
+        })
+        window.addEventListener('unhandledrejection', function (e) {
+          var r = e.reason
+          document.title = 'JS_REJECT:' + String((r && (r.stack || r.message)) || r).slice(0, 120)
+          showErr('[未处理的Promise] ' + String((r && (r.stack || r.message)) || r))
+        })
+        window.addEventListener('load', function () {
+          if (!document.title.startsWith('JS_')) document.title = 'JS_OK'
+        })
+      })()
+    </script>
+  </body>
+</html>
