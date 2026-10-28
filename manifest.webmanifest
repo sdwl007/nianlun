@@ -1,0 +1,16 @@
+{
+  "name": "年轮 · 家庭人生历程记录",
+  "short_name": "年轮",
+  "description": "一年一环，层层积累 —— 记录家人与自己的人生历程",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FCFEFD",
+  "theme_color": "#34A08C",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
